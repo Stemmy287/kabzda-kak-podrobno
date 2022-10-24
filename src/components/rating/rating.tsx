@@ -1,15 +1,19 @@
-type RatingTypeProps = {
-    value: number
-}
+import {useState} from "react";
 
-export function Rating(props: RatingTypeProps) {
+
+
+export function UnControlRating() {
     console.log('Rating rendering');
+
+    let [ratingStar, setRatingStar] = useState(0)
+
     return <div>
-        <Star selected={props.value > 0}/>
-        <Star selected={props.value > 1}/>
-        <Star selected={props.value > 2}/>
-        <Star selected={props.value > 3}/>
-        <Star selected={props.value > 4}/>
+        <Star selected={ratingStar > 0}/> <button onClick={() => {setRatingStar(1)}}>1</button>
+        <Star selected={ratingStar > 1}/> <button onClick={() => {setRatingStar(2)}}>2</button>
+        <Star selected={ratingStar > 2}/> <button onClick={() => {setRatingStar(3)}}>3</button>
+        <Star selected={ratingStar > 3}/> <button onClick={() => {setRatingStar(4)}}>4</button>
+        <Star selected={ratingStar > 4}/> <button onClick={() => {setRatingStar(5)}}>5</button>
+
     </div>;
 }
 
