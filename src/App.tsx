@@ -8,9 +8,8 @@ function App() {
     console.log('App rendering');
     return (
         <div>
-            {/*<AppTitle/>
-
-            <p>Commit</p>*/}
+            <AppTitle/>
+            <p>Commit</p>
             <UnControlAccordion titleValue={'Меню'}/>
             <UnControlAccordion titleValue={'Подменю'}/>
             <UnControlRating/>
