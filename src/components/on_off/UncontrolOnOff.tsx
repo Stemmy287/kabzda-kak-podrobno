@@ -1,8 +1,10 @@
 import {useState} from "react";
 
+type UnControlOnOffPropsType = {
+    setClickOn: (clickOn: boolean) => void
+}
 
-
-export const UnControlOnOff = () => {
+export const UnControlOnOff = (props: UnControlOnOffPropsType) => {
 
     let [clickOn, setClickOn] = useState(false)
 
@@ -33,11 +35,15 @@ export const UnControlOnOff = () => {
         backgroundColor: clickOn ? 'green' : 'red'
     }
 
+    const onClickHandler = (on: boolean) => {
+        setClickOn(on)
+        props.setClickOn(on)
+    }
 
     return (
         <div>
-            <div style={onStyle} onClick={() => {setClickOn(true)}}>On</div>
-            <div style={offStyle} onClick={() => {setClickOn(false)}}>Off</div>
+            <div style={onStyle} onClick={() => onClickHandler(true)}>On</div>
+            <div style={offStyle} onClick={() => onClickHandler(false)}>Off</div>
             <div style={indicatorStyle}></div>
         </div>
     )

@@ -5,6 +5,7 @@ import {UnControlOnOff} from './components/on_off/UncontrolOnOff';
 import {Rating, RatingValueType} from "./components/rating/rating";
 import {Accordion} from "./components/accordion/accordion";
 import {OnOff} from "./components/on_off/OnOff";
+import {UnControlRating} from "./components/rating/Uncontrolrating";
 
 function App() {
     console.log('App rendering');
@@ -19,10 +20,10 @@ function App() {
             <p>Commit</p>*/}
             <UnControlAccordion titleValue={'Меню'}/>
             <Accordion titleValue={'Подменю'} setCollapsed={setCollapsed} collapsed={collapsed}/>
-            {/*<UnControlRating/>*/}
+            <UnControlRating/>
             <Rating ratingValue={ratingValue} setRatingValue={setRatingValue}/>
-            <UnControlOnOff/>
-            <OnOff setClickOn={setClickOn} clickOn={clickOn}/>
+            <UnControlOnOff setClickOn={setClickOn}/> {`${clickOn}`}
+            {/*<OnOff setClickOn={setClickOn} clickOn={clickOn}/>*/}
         </div>
     );
 }
