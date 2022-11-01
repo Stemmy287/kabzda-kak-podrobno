@@ -1,19 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {UnControlAccordion} from './components/accordion/accordion';
-import {OnOff} from './components/on_off/on_off';
-import {UnControlRating} from "./components/rating/rating";
+import {UnControlAccordion} from './components/accordion/Unconrolaccordion';
+import {UnControlOnOff} from './components/on_off/UncontrolOnOff';
+import {Rating, RatingValueType} from "./components/rating/rating";
+import {Accordion} from "./components/accordion/accordion";
+import {OnOff} from "./components/on_off/OnOff";
 
 function App() {
     console.log('App rendering');
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [collapsed, setCollapsed] = useState(false)
+    let [clickOn, setClickOn] = useState(false)
+
     return (
         <div>
             {/*<AppTitle/>
             <p>Commit</p>*/}
             <UnControlAccordion titleValue={'Меню'}/>
-            <UnControlAccordion titleValue={'Подменю'}/>
-            <UnControlRating/>
-            <OnOff/>
+            <Accordion titleValue={'Подменю'} setCollapsed={setCollapsed} collapsed={collapsed}/>
+            {/*<UnControlRating/>*/}
+            <Rating ratingValue={ratingValue} setRatingValue={setRatingValue}/>
+            <UnControlOnOff/>
+            <OnOff setClickOn={setClickOn} clickOn={clickOn}/>
         </div>
     );
 }
