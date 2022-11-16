@@ -1,0 +1,31 @@
+.select {
+    width: 100px;
+    display: inline-block;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.select:active {
+    width: 100px;
+    display: inline-block;
+    border: 2px solid blue;
+    text-align: center;
+}
+
+.option {
+    width: 100px;
+    text-align: center;
+}
+
+.option:hover {
+    width: 100px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgb(128,128,128, 20%);
+}
+
+.option:active {
+    width: 100px;
+    border: 2px solid blue;
+    text-align: center;
+}
